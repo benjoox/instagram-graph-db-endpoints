@@ -1,0 +1,10 @@
+version: '2.4'
+services:
+  neo4j:
+    image: neo4j
+    container_name: neo4j-local
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - $HOME/neo4j/data:/data
