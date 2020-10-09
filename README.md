@@ -9,7 +9,7 @@ git clone git@github.com:benjoox/instagram-graph-db-endpoints.git
 ```
 npm install
 ```
--   Copy the `.env.example` to `.env`. Uncomment either the Neo4j. Edit if necessary.
+-   Copy the `.env.example` to `.env`. Uncomment the Neo4j. Edit if necessary.
 -   Start the app with `npm start`.
 -   Go to `localhost:3000` in your browser and try one of the endpoints in 'Endpoints' section below.
 
@@ -30,12 +30,24 @@ For each enitity there is a seed.cypher file. Open `localhost:7474` and paste th
 ### Endpoints
 
 #### User endpoints
-
-`GET /user`
+`GET /users`
 Lists all the users
 
-`GET /user?id=<userID>`
+`GET /users?id=<userID>`
 Get the user with the provided id
 
-`GET /user?username=<username>`
+`GET /users?username=<username>`
 Get the user with the provided username
+
+`GET /users/<username>/photos-liked`
+Get the photos liked by the given username
+
+#### Photos endpoints
+`GET /photos`
+Lists all the photos
+
+`GET /photos?id=<photoID>`
+Get the photo with the provided id
+
+`GET /photos/<photoID>/user-liked`
+Get the users who liked the given photo
