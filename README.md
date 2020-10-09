@@ -42,6 +42,12 @@ Get the user with the provided username
 `GET /users/<username>/photos-liked`
 Get the photos liked by the given username
 
+`PUT /users/<username>`
+Update the users property
+
+`DELETE /users/<username>`
+Delete a user node and its relations
+
 #### Photos endpoints
 `GET /photos`
 Lists all the photos
