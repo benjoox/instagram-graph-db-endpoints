@@ -31,14 +31,14 @@ export class UserRepository {
         @InjectCypher(__dirname, 'deleteProfile') readonly deleteProfile: CypherStatement
     ) {}
 
-    async findUsers(): Promise<any> {
+    async find(): Promise<any> {
         const spec = new QuerySpecification().withStatement(this.profiles);
         return this.persistenceManager.query(spec);
     }
 
     async findByUsername(username: string): Promise<any> {
         const spec = new QuerySpecification().withStatement(this.profileByUsername).bind({ username });
-        return this.persistenceManager.maybeGetOne(spec);
+        return this.persistenceManager.query(spec);
     }
 
     async findByID(userID: string): Promise<any> {

@@ -6,11 +6,10 @@ export class NotFoundExceptionFilter implements ExceptionFilter {
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
         const request = ctx.getRequest();
-        const status = exception.getStatus();
 
-        response.status(status).json({
-            statusCode: status,
-            message: 'Resource not found',
+        response.status(400).json({
+            statusCode: 400,
+            message: 'Bad Request',
             timestamp: new Date().toISOString(),
             path: request.url
         });
