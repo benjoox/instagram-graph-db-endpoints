@@ -1,6 +1,7 @@
 import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from './AppModule';
 import { ClassSerializerInterceptor, INestApplication, Logger, ValidationPipe } from '@nestjs/common';
+import { NotFoundExceptionFilter } from './ExceptionFilters/NotFoundException.filter';
 
 require('dotenv').config({ path: require('find-config')('.env') });
 
@@ -19,6 +20,8 @@ export async function configureApp(app: INestApplication): Promise<void> {
     );
 
     app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
+
+    app.useGlobalFilters(new NotFoundExceptionFilter());
 
     if (require.main === module) {
         const port = process.env.SERVER_PORT || 3000;
