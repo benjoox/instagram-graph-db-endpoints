@@ -234,17 +234,4 @@
       is_verified: false
     })
   CREATE (_822819803)-[:LIKED]->(_2410777214689933717)
-  CREATE (_32178216112: User {
-      username: 'milehigh_tt',
-      blocked_by_viewer: false,
-      business_email: '',
-      followed_by_count: 204,
-      follow_count: 100,
-      is_business_account: false, 
-      id: 32178216112, 
-      is_private: false,
-      connected_fb_page: '',
-      is_verified: false
-    })
-  CREATE (_32178216112)-[:LIKED]->(_2404995451468256754)
   CREATE (_6674398620)-[:LIKED]->(_2404995451468256754)
